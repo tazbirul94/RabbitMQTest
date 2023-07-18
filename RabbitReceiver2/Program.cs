@@ -3,9 +3,8 @@ using RabbitMQ.Client.Events;
 using System.Text;
 
 ConnectionFactory factory = new();
-factory.Uri = new Uri("amqp://guest:guest@localhost:5672"); // post is taken fromt he docker image
-factory.ClientProvidedName = "Rabbit Receiver1 App"; //name for the rabbitmq application
-
+factory.Uri = new Uri("amqp://guest:guest@localhost:5672");
+factory.ClientProvidedName = "Rabbit Receiver2 App";
 IConnection conn = factory.CreateConnection();
 
 IModel channel = conn.CreateModel();
@@ -22,7 +21,7 @@ channel.BasicQos(0, 1, false);
 var consumer = new EventingBasicConsumer(channel);
 consumer.Received += (sender, args) =>
 {
-    Task.Delay(TimeSpan.FromSeconds(5)).Wait(); //waits for 5 seconds to receive the data
+    Task.Delay(TimeSpan.FromSeconds(3)).Wait();
 
     var body = args.Body.ToArray();
 
