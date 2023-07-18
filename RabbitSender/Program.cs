@@ -11,11 +11,11 @@ IModel channel = conn.CreateModel();
 
 string exchangeName = "DemoExchange";
 string routingKey = "demo-routing-key";
-string quarterName = "DemoQueue";
+string queueName = "DemoQueue";
 
 channel.ExchangeDeclare(exchangeName, ExchangeType.Direct);
-channel.QueueDeclare(quarterName, false, false, false, null);
-channel.QueueBind(quarterName, exchangeName, routingKey, null);
+channel.QueueDeclare(queueName, false, false, false, null);
+channel.QueueBind(queueName, exchangeName, routingKey, null);
 
 byte[] messageBodyBytes = Encoding.UTF8.GetBytes("Hello World"); //when you send a message though a broker always send bytes
 channel.BasicPublish(exchangeName, routingKey, null, messageBodyBytes);
