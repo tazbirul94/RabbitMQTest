@@ -5,3 +5,8 @@
 /.vs/RabbitMQTest/FileContentIndex/read.lock
 /.vs/RabbitMQTest/FileContentIndex/e7b69acf-d477-4b41-9544-59264916c719.vsidx
 /.vs/RabbitMQTest/v17/.suo
+/RabbitSender/obj/Debug/net7.0/RabbitSender.assets.cache
+/RabbitSender/obj/Debug/net7.0/RabbitSender.csproj.AssemblyReference.cache
+/RabbitSender/obj/project.assets.json
+/RabbitSender/obj/project.nuget.cache
+/RabbitSender/obj/RabbitSender.csproj.nuget.dgspec.json
